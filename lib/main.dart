@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Corona Virus Checkup',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        // primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: QuestionnaireScreen(),

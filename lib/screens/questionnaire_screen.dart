@@ -13,89 +13,73 @@ class QuestionnaireScreen extends StatefulWidget {
 class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   MediaQueryData mediaQuery;
 
+  var arr = [
+    'Do you smell coffee or tea?',
+    'Do you have dry cough?',
+    'Do you have soar throat?',
+    'Do you feel fatigue?'
+  ];
+
+  var days = [
+    'Mon',
+    'Tues',
+    'Wed',
+    'Thurs',
+    'Fri',
+    'Sat',
+    'Sun',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Column(
-        children: [
-          SizedBox(
-            height: 40,
-          ),
-          TextWidget('Daily Report'),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              GraphBarWidget(),
-              SizedBox(
-                width: 10,
-              ),
-              GraphBarWidget(),
-              SizedBox(
-                width: 10,
-              ),
-              GraphBarWidget(),
-              SizedBox(
-                width: 10,
-              ),
-              GraphBarWidget(),
-              SizedBox(
-                width: 10,
-              ),
-              GraphBarWidget(),
-              SizedBox(
-                width: 10,
-              ),
-              GraphBarWidget(),
-              SizedBox(
-                width: 10,
-              ),
-              GraphBarWidget(),
-            ],
-          ),
-          TextfieldWidget(2.0),
-          TextWidget('Please answer the following yes/no questions:'),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: SizedBox(
-                  width: 50,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            TextWidget('Daily Report'),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                SizedBox(
+                  width: 20,
                 ),
-              ),
-              TextWidget('Yes'),
-              SizedBox(
-                width: 10,
-              ),
-              TextWidget('No'),
-              SizedBox(
-                width: 10,
-              ),
-            ],
-          ),
-          QuestionYesNo('Do you smell coffee or tea?'),
-          SizedBox(
-            height: 10,
-          ),
-          QuestionYesNo('Do you have dry cough?'),
-          SizedBox(
-            height: 10,
-          ),
-          QuestionYesNo('Do you have soar throat?'),
-          SizedBox(
-            height: 10,
-          ),
-          QuestionYesNo('Do you have body ache?'),
-          SizedBox(
-            height: 10,
-          ),
-          QuestionYesNo('Do you feel fatigue?'),
-        ],
+                for (var day in days) GraphBarWidget(day, true),
+              ],
+            ),
+            TextfieldWidget(0),
+            TextWidget('Please answer the following yes/no questions:'),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    width: 50,
+                  ),
+                ),
+                TextWidget('Yes'),
+                SizedBox(
+                  width: 10,
+                ),
+                TextWidget('No'),
+                SizedBox(
+                  width: 10,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            for (var ques in arr) QuestionYesNo(ques),
+          ],
+        ),
       ),
     );
   }

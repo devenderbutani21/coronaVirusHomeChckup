@@ -12,13 +12,17 @@ class TextfieldWidget extends StatefulWidget {
 class _TextfieldWidgetState extends State<TextfieldWidget> {
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      obscureText: true,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(),
-        labelText: 'Password',
-        labelStyle: new TextStyle(
-          color: const Color(0xFF424242),
+    return Container(
+      height: 60,
+      width: 240,
+      child: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(
+              color: widget._value > 2 ? Colors.black : Colors.red,
+            ),
+          ),
         ),
       ),
     );

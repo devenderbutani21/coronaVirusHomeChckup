@@ -18,7 +18,7 @@ class RoundCheckboxButton extends StatelessWidget {
         child: isCompleted
             ? Icon(
                 Icons.check,
-                size: 30,
+                size: 16,
                 color: Colors.white,
               )
             : Icon(

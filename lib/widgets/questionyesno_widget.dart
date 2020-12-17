@@ -15,19 +15,26 @@ class QuestionYesNo extends StatefulWidget {
 class _QuestionYesNoState extends State<QuestionYesNo> {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          flex: 1,
-          child: TextWidget(widget._text),
+    return Column(
+      children: [
+        Row(
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: TextWidget(widget._text),
+            ),
+            RoundCheckboxButton(true),
+            SizedBox(
+              width: 10,
+            ),
+            RoundCheckboxButton(false),
+            SizedBox(
+              width: 10,
+            ),
+          ],
         ),
-        RoundCheckboxButton(true),
         SizedBox(
-          width: 10,
-        ),
-        RoundCheckboxButton(false),
-        SizedBox(
-          width: 10,
+          height: 10,
         ),
       ],
     );
