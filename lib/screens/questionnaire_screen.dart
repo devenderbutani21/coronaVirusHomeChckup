@@ -77,7 +77,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
             SizedBox(
               height: 10,
             ),
-            for (var ques in arr) QuestionYesNo(ques),
+            for (var ques in arr) QuestionYesNo(ques,false),
           ],
         ),
       ),

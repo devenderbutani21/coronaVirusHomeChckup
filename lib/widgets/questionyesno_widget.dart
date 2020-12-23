@@ -5,8 +5,9 @@ import 'roundCheckboxButton.dart';
 
 class QuestionYesNo extends StatefulWidget {
   String _text;
+  bool _yesNo;
 
-  QuestionYesNo(this._text);
+  QuestionYesNo(this._text,this._yesNo);
 
   @override
   _QuestionYesNoState createState() => _QuestionYesNoState();
@@ -23,11 +24,11 @@ class _QuestionYesNoState extends State<QuestionYesNo> {
               flex: 1,
               child: TextWidget(widget._text),
             ),
-            RoundCheckboxButton(true),
+            RoundCheckboxButton(widget._yesNo),
             SizedBox(
               width: 10,
             ),
-            RoundCheckboxButton(false),
+            RoundCheckboxButton(!widget._yesNo),
             SizedBox(
               width: 10,
             ),

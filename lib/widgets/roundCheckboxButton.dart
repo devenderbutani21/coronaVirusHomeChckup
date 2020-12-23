@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
-class RoundCheckboxButton extends StatelessWidget {
+class RoundCheckboxButton extends StatefulWidget {
   final bool isCompleted;
 
   const RoundCheckboxButton(this.isCompleted);
+
+  @override
+  _RoundCheckboxButtonState createState() => _RoundCheckboxButtonState();
+}
+
+class _RoundCheckboxButtonState extends State<RoundCheckboxButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,11 +17,11 @@ class RoundCheckboxButton extends StatelessWidget {
       width: 30,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: isCompleted ? Color(0xff37d7b2) : Colors.white,
+        color: widget.isCompleted ? Color(0xff37d7b2) : Colors.white,
       ),
       child: Padding(
         padding: EdgeInsets.all(0),
-        child: isCompleted
+        child: widget.isCompleted
             ? Icon(
                 Icons.check,
                 size: 16,

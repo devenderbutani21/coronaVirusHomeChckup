@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './screens/questionnaire_screen.dart';
+import 'widgets/yesno_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
       title: 'Corona Virus Checkup',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // primarySwatch: Colors.red,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: QuestionnaireScreen(),
+      // home: QuestionnaireScreen(),
+      home: YesNo(true),
     );
   }
 }
