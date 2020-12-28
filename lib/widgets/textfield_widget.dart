@@ -14,7 +14,7 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
   Widget build(BuildContext context) {
     return Container(
       height: 60,
-      width: 240,
+      width: 100,
       child: TextField(
         decoration: InputDecoration(
           border: OutlineInputBorder(

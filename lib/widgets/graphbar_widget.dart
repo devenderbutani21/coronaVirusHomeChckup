@@ -26,6 +26,7 @@ class _GraphBarWidgetState extends State<GraphBarWidget> {
               widget._text,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Arial',
               ),
             ),
           ],

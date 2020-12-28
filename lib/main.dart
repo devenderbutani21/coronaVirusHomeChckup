@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: QuestionnaireScreen(),
-      home: YesNo(true),
+      home: QuestionnaireScreen(),
+      // home: YesNo(true),
     );
   }
 }

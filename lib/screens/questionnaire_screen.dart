@@ -51,7 +51,57 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                 for (var day in days) GraphBarWidget(day, true),
               ],
             ),
-            TextfieldWidget(0),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: 10,
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: TextWidget('What is your body temperature?'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 40,
+              width: 360,
+              child: TextfieldWidget(0),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                left: 10,
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: TextWidget('What is your blood oxygen level?'),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 40,
+              width: 360,
+              child: TextfieldWidget(0),
+            ),
+            SizedBox(
+              height: 10,
+            ),
             TextWidget('Please answer the following yes/no questions:'),
             SizedBox(
               height: 10,
@@ -77,7 +127,33 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
             SizedBox(
               height: 10,
             ),
-            for (var ques in arr) QuestionYesNo(ques,false),
+            for (var ques in arr) QuestionYesNo(ques, false),
+            Row(
+              children: [
+                SizedBox(
+                  width: 308,
+                ),
+                SizedBox(
+                  width: 100,
+                  child: FlatButton(
+                    padding: EdgeInsets.all(16.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(40.0),
+                    ),
+                    color: Colors.red,
+                    child: Text(
+                      'Submit',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontFamily: 'Arial',
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
