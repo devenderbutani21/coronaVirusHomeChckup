@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'submitted_screen.dart';
+
 import '../widgets/text_widget.dart';
 import '../widgets/questionyesno_widget.dart';
 import '../widgets/textfield_widget.dart';
@@ -48,7 +50,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                 SizedBox(
                   width: 20,
                 ),
-                for (var day in days) GraphBarWidget(day, true),
+                for (var day in days) GraphBarWidget(day, false, false),
               ],
             ),
             SizedBox(
@@ -127,7 +129,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
             SizedBox(
               height: 10,
             ),
-            for (var ques in arr) QuestionYesNo(ques, false),
+            for (var ques in arr) QuestionYesNo(ques, false, false),
             Row(
               children: [
                 SizedBox(
@@ -149,7 +151,19 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                         fontFamily: 'Arial',
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        child: Dialog(
+                          insetPadding: EdgeInsets.all(80),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                                32),
+                          ),
+                          child: SubmittedScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],

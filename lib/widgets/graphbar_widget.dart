@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class GraphBarWidget extends StatefulWidget {
   String _text;
   bool _tf;
+  bool _yesvalue;
 
-  GraphBarWidget(this._text, this._tf);
+  GraphBarWidget(this._text, this._yesvalue, this._tf);
 
   @override
   _GraphBarWidgetState createState() => _GraphBarWidgetState();
@@ -20,7 +21,7 @@ class _GraphBarWidgetState extends State<GraphBarWidget> {
             Container(
               height: 80,
               width: 40,
-              color: Colors.red,
+              color: widget._yesvalue ? widget._tf ? Colors.green : Colors.red : Colors.white,
             ),
             Text(
               widget._text,

@@ -12,7 +12,7 @@ class TextWidget extends StatelessWidget {
       softWrap: true,
       style: TextStyle(
         fontWeight: FontWeight.bold,
-        fontSize: 24,
+        fontSize: 20,
         fontFamily: 'Arial',
       ),
     );

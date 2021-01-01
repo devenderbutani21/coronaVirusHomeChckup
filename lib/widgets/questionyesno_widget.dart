@@ -6,8 +6,9 @@ import 'roundCheckboxButton.dart';
 class QuestionYesNo extends StatefulWidget {
   String _text;
   bool _yesNo;
+  bool _yesvalue;
 
-  QuestionYesNo(this._text,this._yesNo);
+  QuestionYesNo(this._text,this._yesvalue, this._yesNo);
 
   @override
   _QuestionYesNoState createState() => _QuestionYesNoState();
