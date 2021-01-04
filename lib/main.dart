@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './screens/questionnaire_screen.dart';
-import 'widgets/yesno_widget.dart';
+import 'widgets/radioButton_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: QuestionnaireScreen(),
-      // home: YesNo(true),
+      // home: QuestionnaireScreen(),
+      home: RadioButton(),
     );
   }
 }
