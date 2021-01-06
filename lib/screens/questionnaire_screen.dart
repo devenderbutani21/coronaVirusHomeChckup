@@ -58,7 +58,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
             ),
             Container(
               margin: EdgeInsets.only(
-                left: 10,
+                left: 20,
               ),
               child: Row(
                 children: [
@@ -82,7 +82,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
             ),
             Container(
               margin: EdgeInsets.only(
-                left: 10,
+                left: 20,
               ),
               child: Row(
                 children: [
@@ -104,17 +104,21 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
             SizedBox(
               height: 10,
             ),
-            TextWidget('Please answer the following yes/no questions:'),
+            Container(
+              padding: EdgeInsets.only(
+                left: 20.0,
+                right: 20.0,
+              ),
+              child:
+                  TextWidget('Please answer the following yes/no questions:'),
+            ),
             SizedBox(
               height: 10,
             ),
             Row(
               children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: SizedBox(
-                    width: 50,
-                  ),
+                SizedBox(
+                  width: 300,
                 ),
                 TextWidget('Yes'),
                 SizedBox(
@@ -129,7 +133,12 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
             SizedBox(
               height: 10,
             ),
-            for (var ques in arr) QuestionYesNo(ques, false, false),
+            for (var ques in arr)
+              Container(
+                height: 70,
+                width: 360,
+                child: QuestionYesNo(ques),
+              ),
             Row(
               children: [
                 SizedBox(
@@ -155,10 +164,9 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                       showDialog(
                         context: context,
                         child: Dialog(
-                          insetPadding: EdgeInsets.all(80),
+                          insetPadding: EdgeInsets.all(32),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                                32),
+                            borderRadius: BorderRadius.circular(16),
                           ),
                           child: SubmittedScreen(),
                         ),

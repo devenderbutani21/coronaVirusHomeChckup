@@ -6,37 +6,36 @@ class RadioButton extends StatefulWidget {
 }
 
 class _RadioButtonState extends State<RadioButton> {
-
-  bool yesOrNo = true;
+  bool yesOrNo;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Row(
-          children: [
-            Radio(
-              value: true,
-              groupValue: yesOrNo,
-              onChanged: (T) {
-                print(T);
-                    setState(() {
-                      yesOrNo = T;
-                    });
-              },
-            ),
-            Radio(
-              value: false,
-              groupValue: yesOrNo,
-              onChanged: (T) {
-                print(T);
-                setState(() {
-                  yesOrNo = T;
-                });
-              },
-            ),
-          ],
-        ),
+    return Container(
+      height: 60,
+      width: 100,
+      child: Row(
+        children: [
+          Radio(
+            value: true,
+            groupValue: yesOrNo,
+            onChanged: (T) {
+              print(T);
+              setState(() {
+                yesOrNo = T;
+              });
+            },
+          ),
+          Radio(
+            value: false,
+            groupValue: yesOrNo,
+            onChanged: (T) {
+              print(T);
+              setState(() {
+                yesOrNo = T;
+              });
+            },
+          ),
+        ],
       ),
     );
   }
