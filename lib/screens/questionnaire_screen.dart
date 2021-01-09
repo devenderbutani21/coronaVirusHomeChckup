@@ -17,6 +17,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
 
   var arr = [
     'Do you smell coffee or tea?',
+    'Do you taste Coffee or tea?',
     'Do you have dry cough?',
     'Do you have soar throat?',
     'Do you feel fatigue?'
