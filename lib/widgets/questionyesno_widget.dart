@@ -16,7 +16,7 @@ class _QuestionYesNoState extends State<QuestionYesNo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: 50,
       width: 300,
       child: Column(
         children: [
@@ -29,9 +29,6 @@ class _QuestionYesNoState extends State<QuestionYesNo> {
               ),
               RadioButton(),
             ],
-          ),
-          SizedBox(
-            height: 10,
           ),
         ],
       ),

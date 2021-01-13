@@ -5,7 +5,6 @@ import 'submitted_screen.dart';
 import '../widgets/text_widget.dart';
 import '../widgets/questionyesno_widget.dart';
 import '../widgets/textfield_widget.dart';
-import '../widgets/graphbar_widget.dart';
 
 class QuestionnaireScreen extends StatefulWidget {
   @override
@@ -22,46 +21,37 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
     'Do you have soar throat?',
     'Do you feel fatigue?'
   ];
+  int _selectedIndex = 0;
 
-  var days = [
-    'Mon',
-    'Tues',
-    'Wed',
-    'Thurs',
-    'Fri',
-    'Sat',
-    'Sun',
-  ];
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Questions',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 28,
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 40,
-            ),
-            TextWidget('Daily Report'),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 20,
-                ),
-                for (var day in days) GraphBarWidget(day, false, false),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: 20,
-              ),
-              child: Row(
+        child: Container(
+          padding: EdgeInsets.only(
+            top: 8,
+            bottom: 8,
+            left: 32,
+            right: 32,
+          ),
+          child: Column(
+            children: [
+              Row(
                 children: [
                   Expanded(
                     flex: 1,
@@ -69,23 +59,18 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                   ),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 40,
-              width: 360,
-              child: TextfieldWidget(0),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                left: 20,
+              SizedBox(
+                height: 10,
               ),
-              child: Row(
+              Container(
+                height: 40,
+                width: 360,
+                child: TextfieldWidget(0),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
                 children: [
                   Expanded(
                     flex: 1,
@@ -93,92 +78,100 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                   ),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 40,
-              width: 360,
-              child: TextfieldWidget(0),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              padding: EdgeInsets.only(
-                left: 20.0,
-                right: 20.0,
+              SizedBox(
+                height: 10,
               ),
-              child:
-                  TextWidget('Please answer the following yes/no questions:'),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: <Widget>[
-                SizedBox(
-                  width: 300,
-                ),
-                TextWidget('Yes'),
-                SizedBox(
-                  width: 10,
-                ),
-                TextWidget('No'),
-                SizedBox(
-                  width: 10,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            for (var ques in arr)
               Container(
-                height: 70,
+                height: 40,
                 width: 360,
-                child: QuestionYesNo(ques),
+                child: TextfieldWidget(0),
               ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 308,
-                ),
-                SizedBox(
-                  width: 100,
-                  child: FlatButton(
-                    padding: EdgeInsets.all(16.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40.0),
-                    ),
-                    color: Colors.red,
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontFamily: 'Arial',
-                      ),
-                    ),
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        child: Dialog(
-                          insetPadding: EdgeInsets.all(32),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16),
-                          ),
-                          child: SubmittedScreen(),
-                        ),
-                      );
-                    },
+              SizedBox(
+                height: 10,
+              ),
+              TextWidget('Please answer the following yes/no questions:'),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: <Widget>[
+                  SizedBox(
+                    width: 260,
                   ),
+                  TextWidget('Yes'),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  TextWidget('No'),
+                  SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              for (var ques in arr)
+                Container(
+                  height: 70,
+                  width: 360,
+                  child: QuestionYesNo(ques),
                 ),
-              ],
-            ),
-          ],
+              Row(
+                children: [
+                  SizedBox(
+                    width: 244,
+                  ),
+                  SizedBox(
+                    width: 100,
+                    child: FlatButton(
+                      padding: EdgeInsets.all(16.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(40.0),
+                      ),
+                      color: Colors.red,
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontFamily: 'Arial',
+                        ),
+                      ),
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          child: Dialog(
+                            insetPadding: EdgeInsets.all(32),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: SubmittedScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'User',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.red,
+        onTap: _onItemTapped,
       ),
     );
   }

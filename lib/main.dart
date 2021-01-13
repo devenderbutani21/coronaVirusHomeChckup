@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './screens/questionnaire_screen.dart';
-import 'widgets/radioButton_widget.dart';
+import './screens/dashboard_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,9 +16,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.red,
+        primaryColor: Colors.white,
+        canvasColor: Colors.white,
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          color: Colors.white,
+        ),
       ),
-      home: QuestionnaireScreen(),
-      // home: RadioButton(),
+      home: DashboardScreen(),
     );
   }
 }
