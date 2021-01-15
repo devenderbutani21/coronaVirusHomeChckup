@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: DashboardScreen(),
+      // home: QuestionnaireScreen(),
     );
   }
 }

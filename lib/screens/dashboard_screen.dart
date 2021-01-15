@@ -4,13 +4,13 @@ import '../widgets/text_widget.dart';
 import '../widgets/graphbar_widget.dart';
 
 var days = [
-  'Mon',
-  'Tues',
-  'Wed',
-  'Thurs',
-  'Fri',
-  'Sat',
-  'Sun',
+  'M',
+  'T',
+  'W',
+  'Th',
+  'F',
+  'Sa',
+  'Su',
 ];
 
 class DashboardScreen extends StatefulWidget {
@@ -22,22 +22,49 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Dashboard',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 28,
+          ),
+        ),
+      ),
       body: Column(
-        children: <Widget>[
+        children: [
           SizedBox(
-            height: 40,
+            height: 20,
           ),
-          TextWidget('Daily Report'),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 20,
-              ),
-              for (var day in days) GraphBarWidget(day, false, false),
-            ],
+          Container(
+            margin: EdgeInsets.only(
+              left: 25,
+            ),
+            height: 180,
+            width: 360,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16.0),
+              color: Colors.red,
+            ),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 20,
+                ),
+                TextWidget('Daily Report'),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 30,
+                    ),
+                    for (var day in days) GraphBarWidget(day, false, false),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -19,8 +19,8 @@ class _GraphBarWidgetState extends State<GraphBarWidget> {
         Column(
           children: [
             Container(
-              height: 80,
-              width: 40,
+              height: 60,
+              width: 30,
               color: widget._yesvalue ? widget._tf ? Colors.green : Colors.red : Colors.white,
             ),
             Text(
