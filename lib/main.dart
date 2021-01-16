@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './screens/questionnaire_screen.dart';
+import './screens/home_screen.dart';
 import './screens/dashboard_screen.dart';
 
 void main() {
@@ -24,8 +24,7 @@ class MyApp extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      home: DashboardScreen(),
-      // home: QuestionnaireScreen(),
+      home: HomeScreen(),
     );
   }
 }

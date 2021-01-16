@@ -44,7 +44,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             width: 360,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16.0),
-              color: Colors.red,
+              color: Colors.blue,
             ),
             child: Column(
               children: <Widget>[
@@ -60,7 +60,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     SizedBox(
                       width: 30,
                     ),
-                    for (var day in days) GraphBarWidget(day, false, false),
+                    for (var day in days) GraphBarWidget(day, true, true),
                   ],
                 ),
               ],
