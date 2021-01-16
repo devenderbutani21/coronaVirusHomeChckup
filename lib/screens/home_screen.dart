@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
+  var now = new DateTime.now();
 
   List<Widget> _widgetOptions = <Widget>[
     DashboardScreen(),
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      print(now.weekday);
     });
   }
 
@@ -42,6 +44,5 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: _onItemTapped,
       ),
     );
-
   }
 }
