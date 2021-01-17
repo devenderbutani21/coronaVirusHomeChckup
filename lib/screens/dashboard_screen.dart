@@ -31,43 +31,43 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            margin: EdgeInsets.only(
-              left: 25,
-            ),
-            height: 180,
-            width: 360,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16.0),
-              color: Colors.blue,
-            ),
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 20,
-                ),
-                TextWidget('Daily Report'),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 30,
-                    ),
-                    for (var day in days) GraphBarWidget(day, true, true),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      // body: Column(
+      //   children: [
+      //     SizedBox(
+      //       height: 20,
+      //     ),
+      //     Container(
+      //       margin: EdgeInsets.only(
+      //         left: 25,
+      //       ),
+      //       height: 180,
+      //       width: 360,
+      //       decoration: BoxDecoration(
+      //         borderRadius: BorderRadius.circular(16.0),
+      //         color: Colors.blue,
+      //       ),
+      //       child: Column(
+      //         children: <Widget>[
+      //           SizedBox(
+      //             height: 20,
+      //           ),
+      //           TextWidget('Daily Report'),
+      //           SizedBox(
+      //             height: 30,
+      //           ),
+      //           Row(
+      //             children: [
+      //               SizedBox(
+      //                 width: 30,
+      //               ),
+      //               for (var day in days) GraphBarWidget(day, true, true),
+      //             ],
+      //           ),
+      //         ],
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
