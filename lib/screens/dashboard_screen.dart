@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -85,12 +86,37 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
             child: Column(
               children: <Widget>[
-                Text(formatted.toString()),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: <Widget>[
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Text(
+                      formatted.toString(),
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 20,
+                    ),
                     Icon(
                       Icons.thermostat_sharp,
                       size: 48,
+                    ),
+                    SizedBox(
+                      width: 20,
                     ),
                     Text(
                       'Hello world',
@@ -100,11 +126,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: <Widget>[
+                    SizedBox(
+                      width: 20,
+                    ),
                     Icon(
                       Icons.ac_unit,
                       size: 48,
+                    ),
+                    SizedBox(
+                      width: 20,
                     ),
                     Text(
                       'Hello world',
