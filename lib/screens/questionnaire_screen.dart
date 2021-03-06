@@ -1,7 +1,5 @@
+import 'package:coronavirushomecheckup/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'submitted_screen.dart';
-
 import '../widgets/text_widget.dart';
 import '../widgets/questionyesno_widget.dart';
 import '../widgets/textfield_widget.dart';
@@ -12,6 +10,9 @@ class QuestionnaireScreen extends StatefulWidget {
 }
 
 class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
+  TextEditingController bodyTempController = TextEditingController();
+  TextEditingController bloodOxygenController = TextEditingController();
+
   MediaQueryData mediaQuery;
 
   var arr = [
@@ -33,11 +34,13 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Questions',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 28,
+        title: Center(
+          child: Text(
+            'Questions',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 28,
+            ),
           ),
         ),
       ),
@@ -124,7 +127,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                   ),
                   SizedBox(
                     width: 100,
-                    child: FlatButton(
+                    child: MaterialButton(
                       padding: EdgeInsets.all(16.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40.0),
@@ -139,14 +142,10 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                         ),
                       ),
                       onPressed: () {
-                        showDialog(
-                          context: context,
-                          child: Dialog(
-                            insetPadding: EdgeInsets.all(32),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16),
-                            ),
-                            child: SubmittedScreen(),
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
                           ),
                         );
                       },

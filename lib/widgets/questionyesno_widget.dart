@@ -16,7 +16,7 @@ class _QuestionYesNoState extends State<QuestionYesNo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 20,
       width: 300,
       child: Column(
         children: [
