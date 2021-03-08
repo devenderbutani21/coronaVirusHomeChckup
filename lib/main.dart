@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      home: HomeScreen(),
+      home: HomeScreen("0","0",),
     );
   }
 }

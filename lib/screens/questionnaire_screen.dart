@@ -145,7 +145,7 @@ class _QuestionnaireScreenState extends State<QuestionnaireScreen> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomeScreen(),
+                            builder: (context) => HomeScreen(bodyTempController.text, bloodOxygenController.text ),
                           ),
                         );
                       },

@@ -4,23 +4,30 @@ import 'questionnaire_screen.dart';
 import 'dashboard_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  String temp;
+  String bloodO2level;
+
+  HomeScreen(
+    this.temp,
+    this.bloodO2level,
+  );
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-  var now = new DateTime.now();
+  DateTime now = new DateTime.now();
 
   List<Widget> _widgetOptions = <Widget>[
-    DashboardScreen(),
+    DashboardScreen(now, , ), // Error in this location look it up "the instance member this can the accessed in an initializer"
     QuestionnaireScreen(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
-      print(now.weekday);
     });
   }
 
