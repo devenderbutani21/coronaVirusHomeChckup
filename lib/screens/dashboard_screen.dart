@@ -17,15 +17,6 @@ var days = [
 ];
 
 class DashboardScreen extends StatefulWidget {
-  DateTime date;
-  var temp;
-  var bloodO2level;
-
-  DashboardScreen(
-    this.date,
-    this.temp,
-    this.bloodO2level,
-  );
 
   @override
   _DashboardScreenState createState() => _DashboardScreenState();

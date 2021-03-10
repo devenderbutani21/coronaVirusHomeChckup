@@ -18,21 +18,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
-<<<<<<< HEAD
   var now = new DateTime.now();
-  // changes
-=======
-  DateTime _now = new DateTime.now();
-  String _temp;
-  String _bloodO2level;
->>>>>>> main
+
 
   List<Widget> _widgetOptions = <Widget>[
-    DashboardScreen(
-      _now,
-      _temp,
-      _bloodO2level,
-    ),
+    DashboardScreen(),
     QuestionnaireScreen(),
   ];
 
@@ -44,9 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    _now = DateTime.now();
-    _temp = widget.temp;
-    _bloodO2level = widget.bloodO2level;
     super.initState();
   }
 
