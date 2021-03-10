@@ -21,13 +21,18 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
     return Container(
       height: 60,
       width: 100,
-      child: TextField(
-        controller: widget._textEditingController,
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-            borderSide: BorderSide(
-              color: _color,
+      child: Theme(
+        data: ThemeData(
+          primaryColor: Colors.black,
+        ),
+        child: TextField(
+          controller: widget._textEditingController,
+          decoration: InputDecoration(
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10.0),
+              borderSide: BorderSide(
+                color: _color,
+              ),
             ),
           ),
         ),
